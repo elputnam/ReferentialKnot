@@ -16,6 +16,7 @@ function setup() {
     tracks.push(new Particle());
   }
   background(30);
+  
     // Setup Web Serial using serial.js
     serial = new Serial();
     serial.on(SerialEvents.CONNECTION_OPENED, onSerialConnectionOpened);
@@ -32,6 +33,7 @@ function setup() {
 
 function draw() {
   background(30, 1);
+
   for (i = 0; i < tracks.length; i++) { 
     tracks[i].run();
   }
@@ -153,6 +155,7 @@ function mouseClicked() {
   if (!serial.isOpen()) {
     serial.connectAndOpen(null, serialOptions);
   }
+  background(30);
 }
 
 function windowResized() {
